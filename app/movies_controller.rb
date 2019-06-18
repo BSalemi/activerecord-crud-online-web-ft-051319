@@ -36,6 +36,7 @@ def can_be_created_in_a_block(args = {})
     m.lead = args[:lead]
     m.in_theaters = args[:in_theaters]
   end
+  movie = Movie.new(id: m.id, title: m.title, director: m.director, lead: m.lead, in_theaters: m.in_theaters)
 end
 
 def can_get_the_first_item_in_the_database
