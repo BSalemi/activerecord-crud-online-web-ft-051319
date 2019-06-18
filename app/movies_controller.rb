@@ -25,18 +25,18 @@ def can_be_created_with_a_hash_of_attributes
   movie
 end
 
-def can_be_created_in_a_block(args = {})
+def can_be_created_in_a_block(args = {:title => "Home Alone", :release_date => 1990})
   # If no arguments are passed, use default values:
   # title == "Home Alone"
   # release_date == 1990
   Movie.create do |m|
     m.id = args[:id]
     m.title = args[:title]
+    m.release_date = args[:release_date]
     m.director = args[:director]
     m.lead = args[:lead]
     m.in_theaters = args[:in_theaters]
   end
-  movie = Movie.new(id: m.id, title: m.title, director: m.director, lead: m.lead, in_theaters: m.in_theaters)
 end
 
 def can_get_the_first_item_in_the_database
